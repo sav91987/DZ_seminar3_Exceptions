@@ -3,7 +3,7 @@ package Model;
 public class PowerCalculator {
 
     public int sum(int a, int b) throws ArithmeticException {
-        if (a > Integer.MAX_VALUE / b)
+        if (Math.abs(a) > Math.abs(Integer.MAX_VALUE / b) )
             throw new ArithmeticException("ArithmeticException: ");
 
         return a + b;
@@ -16,7 +16,7 @@ public class PowerCalculator {
     }
 
     public int multi(int a, int b) throws ArithmeticException {
-        if (a > Integer.MAX_VALUE / b)
+        if (Math.abs(a) > Math.abs(Integer.MAX_VALUE / b))
             throw new ArithmeticException("ArithmeticException: ");
         return a * b;
     }

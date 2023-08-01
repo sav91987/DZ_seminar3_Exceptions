@@ -1,39 +1,37 @@
 import java.util.Scanner;
 import Controller.Controller;
+import View.Printer;
 
 public class Main {
     public static void main(String[] args) {
-        int firstNum;
-        int secondNum;
+        int firstNum = 0;
+        int secondNum = 0;
         Scanner scan = new Scanner(System.in);
+        Printer<? super Object> print = new Printer<>();
 
         boolean flag = true;
         while (flag) {
-            System.out.println("Введите первое число: ");
+            print.print("Введите первое число: ");
             if (scan.hasNextInt()) {
                 firstNum = scan.nextInt();
                 break;
             } else
-                System.out.println("Введено не число!");
+                print.print("Введено не число!");
             scan.next();
         }
 
         while (flag) {
-            System.out.println("Введите второе число: ");
+            print.print("Введите второе число: ");
             if (scan.hasNextInt()) {
-                secondNum = Integer.parseInt(scan.next());
+                secondNum = scan.nextInt();
                 break;
             } else
-                System.out.println("Введено не число!");
+                print.print("Введено не число!");
             scan.next();
         }
 
         Controller start = new Controller();
 
-
-
-
         start.run(firstNum, secondNum);
-
     }
 }
